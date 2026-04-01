@@ -1,0 +1,278 @@
+ul,
+ul li {
+  list-style: none;
+}
+
+li {
+  margin-bottom: var(--spacing-s);
+  /* border: 1px solid var(--p-zinc-300);
+    border-width: 0 0 .1rem 0; */
+}
+/* li:first-child {
+    border-width: .1rem 0 .1rem 0;
+  }
+  li:last-child {
+    border-width: 0 0 .1rem 0;
+  } */
+
+.button-remove {
+  display: flex;
+  padding: var(--spacing-s);
+  border-radius: 10%;
+  transition: background-color 0.3s ease-out;
+}
+
+.button-remove:hover {
+  background-color: var(--p-neutral-200);
+}
+
+.button-quantity {
+  display: flex;
+  padding: 10px;
+  border-radius: 10%;
+  transition: background-color 0.3s ease-out;
+  background-color: var(--p-neutral-100);
+}
+
+.button-quantity:hover {
+  background-color: var(--p-neutral-200);
+}
+
+.pi {
+  color: var(--p-neutral-700);
+}
+
+.item-quantity {
+  padding: 10px 14px;
+  min-width: 45px;
+  text-align: center;
+}
+
+.cart-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-s);
+}
+
+.cart-item-product {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-s);
+}
+
+.cart-item-image {
+  flex: 0 0 auto;
+}
+
+.cart-item-content {
+  line-height: 1.5;
+}
+
+.cart-item-description {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cart-item-pack {
+  font-size: var(--text-sm);
+}
+
+.cart-item-packaging {
+  text-align: center;
+}
+
+.cart-item-remove, 
+.cart-item-quantity {
+  justify-self: center;
+}
+
+.cart-item-quantity {
+  display: flex;
+  align-items: center;
+}
+
+.cart-item-summary, 
+.cart-item-price {
+  text-align: center;
+  text-wrap: nowrap;
+}
+
+h3 {
+    font-size: var(--text-lg);
+    font-weight: 500;
+    margin: 0;
+    color: var(--color-green);
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+.order {
+  max-width: 425px;
+  background-color: var(--p-zinc-100);
+  padding: 36px;
+  margin-left: auto;
+}
+
+.order-box {
+  padding-bottom: 4px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--p-zinc-400);
+}
+
+.order-box p {
+  font-weight: 400;
+  color: var(--p-neutral-600);
+}
+
+.order-item-title {
+  overflow: auto;
+}
+
+.order-info {
+  margin-bottom: 10px;
+}
+
+.order-info p {
+  padding: 4px 0;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+}
+
+.order-info p:nth-child(1) {
+  color: var(--p-orange-400);
+}
+
+.order-info p:nth-child(2) {
+  color: var(--p-orange-600);
+}
+
+.order-info p:nth-child(3) {
+  color: var(--color-green);
+}
+
+h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--p-neutral-700);
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.link-push {
+  padding: 4px;
+  border: 1px solid #888;
+}
+
+.cart-box {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-3xl);
+}
+
+/* @media (width < 1024px) {
+  .cart-box {
+    grid-template-columns: 1fr;
+  }
+} */
+
+.checkout a {
+  font-size: 1rem;
+  background-image: linear-gradient(to right, #ff8008 0%, #ffc837 51%, #ff8008 100%);
+  color: white;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 15px 45px;
+  transition: 0.5s;
+  text-align: center;
+  background-size: 200% auto;
+  box-shadow: 0 0 20px #eee;
+  border-radius: 30px;
+  display: block;
+  cursor: pointer;
+}
+
+.checkout a:hover {
+  background-position: right center;
+  /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.pi-cart-arrow-down {
+  padding: 8px;
+  font-size: 1.4rem;
+  color: var(--color-green);
+  transition: background-color 0.3s ease-out;
+  cursor: pointer;
+}
+
+.pi-cart-arrow-down:hover {
+  border-radius: 10%;
+  background-color: var(--p-zinc-300);
+}
+
+
+/* Базовые стили таблицы */
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px; /* Минимальная ширина для скролла */
+}
+
+/* Контейнер скролла для мобильных */
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* плавный скролл iOS */
+  scrollbar-width: thin; /* Firefox */
+   padding-bottom: var(--spacing-m);
+}
+
+/* Кастомный скроллбар */
+.table-scroll::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.table-scroll::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 4px;
+}
+
+.table-scroll::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+
+/* "свайпни влево" на мобильных */
+@media (max-width: 768px) {
+  .table-scroll::before {
+    content: "Свайпни для просмотра";
+    position: absolute;
+    top: -35px;
+    left: 0;
+    background: #3b82f6;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1;
+  }
+  
+  .table-scroll {
+    position: relative;
+  }
+}
+
+th {
+  text-wrap: nowrap;
+}

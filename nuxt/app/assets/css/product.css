@@ -1,0 +1,281 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: 1fr;
+  gap: var(--spacing-2xl);
+}
+
+.product-card {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-3xl);
+  margin-bottom: var(--spacing-xl);
+}
+
+@media (width > 640px) {
+  .product-card {
+    grid-template-columns: 1fr 2fr;
+  }
+}
+
+.product-card__image {
+  text-align: center;
+}
+
+.product-card__atribute {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.product-description {
+  grid-column: span 2;
+}
+
+.attributes, 
+.ingredient, 
+.quantity, 
+.price, 
+.sale {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+}
+
+.ingredient-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.price-box {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xs) 0;
+}
+
+.price-packaging, .sale-packaging {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  align-items: center;
+}
+
+.packaging {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  align-items: center;
+}
+
+.description {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+}
+
+.description__minmax {
+  margin-top: 1rem;
+  color: var(--p-orange-500);
+}
+
+a {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--p-neutral-300);
+  transition: color 0.3s ease-out;
+  -webkit-text-decoration-thickness: 1px;
+  -webkit-text-decoration-color: var(--p-neutral-300);
+}
+
+a:hover {
+  color: var(--color-orange);
+}
+
+h6 {
+  font-size: var(--text-m);
+  font-weight: 500;
+  color: var(--p-neutral-700);
+}
+
+ul, ul li {
+	list-style: none;
+}
+
+.attribut {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xxxs);
+}
+
+.price-item, 
+.sale-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  align-items: center;
+}
+
+.price-item-count {
+  flex: 0 0 74px;
+  color: var(--color-green);
+  font-weight: 400;
+}
+
+.sale-item-count {
+  flex: 0 0 74px;
+  color: var(--color-orange);
+  font-weight: 400;
+}
+
+.sale-info {
+  flex: 1 1 260px;
+  line-height: 1.4;
+}
+
+.price-info, 
+.sale-info {
+  font-size: var(--spacing-sm);
+  font-weight: 300;
+  color: var(--p-neutral-700);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--p-neutral-300);
+  transition: color 0.3s ease-out;
+  -webkit-text-decoration-thickness: 1px;
+  -webkit-text-decoration-color: var(--p-neutral-300);
+
+  /* padding: 3px 9px;
+  border-radius: 10px;
+  background-color: #f3f3f375;
+  border: 1px solid #e6e6eb; */
+}
+
+.ingredients-item {
+  display: flex;
+  gap: var(--spacing-s);
+}
+
+.ingredients-item-box {
+  min-width: 60px;
+  color: var(--text-color);
+  display: flex;
+  gap: 5px;
+}
+
+.ingredients-value {
+  font-size: var(--font-text);
+  color: var(--text-color);
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+}
+
+.ingredient-content {
+  display: flex;
+  gap: 15px;
+}
+
+.ingredient-unit {
+  font-size: var(--font-text);
+  color: var(--text-color);
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+}
+
+/* .ingredient,
+.manufacturer,
+.quantity,
+.price,
+.packaging {
+  display: grid;
+  grid-template-columns: 155px 1fr;
+  gap: 8px;
+} */
+
+.cart-wrapper {
+  display: flex;
+  gap: var(--spacing-xl);
+}
+
+.cart-count {
+  flex: 0 0 auto;
+}
+
+.cart-count input {
+  width: 100%;
+  max-width: var(--spacing-6xl);
+  color: var(--p-neutral-700);
+  font-weight: 500;
+  text-align: center;
+}
+
+.button-count {
+  padding: 15px;
+  border-radius: 10%;
+  transition: background-color 0.3s ease-out;
+  background-color: var(--p-neutral-100);
+}
+
+.button-count:hover {
+  background-color: var(--p-neutral-200);
+}
+
+.count {
+  border: 1px solid gray;
+}
+
+
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.product-loading {
+  width: 100%;
+  height: 100vh;
+}
+
+@media (width < 1100px) {
+  .wrapper {
+    display: grid;
+    grid-template: 1fr / 1fr;
+    gap: 20px;
+  }
+}
+
+@media (width < 769px) {
+  .contents {
+    display: grid;
+    grid-template: 1fr / 1fr;
+    gap: 20px;
+  }
+  .image {
+    justify-self: center;
+  }
+}
+
+@media (width < 520px) {
+  .attributes, .ingredient, .quantity, .description {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .price-info {
+    display: none;
+  }
+
+}
+
+@media (width < 350px) {
+  .cart-button button {
+    padding: 15px 25px;
+  }
+}
+
+
+.status {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}

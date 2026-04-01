@@ -1,0 +1,49 @@
+# Dependencies
+node_modules
+.pnpm-store
+
+# Nuxt build output
+.output
+.nuxt
+dist
+
+# Git
+.git
+.gitignore
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker
+.dockerignore
+Dockerfile
+docker-compose*.yaml
+docker-compose*.yml
+nginx.conf
+
+# Logs
+*.log
+logs/
+
+# Environment files (не попадают в образ для production)
+.env
+.env.*
+!.env.example
+
+# Test & Coverage
+coverage
+.nyc_output
+*.test.js
+*.spec.js
+__tests__
+
+# Misc
+*.md
+LICENSE

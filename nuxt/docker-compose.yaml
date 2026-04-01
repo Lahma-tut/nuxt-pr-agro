@@ -1,0 +1,56 @@
+name: pr-agro-13
+
+services:
+  nuxt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: builder
+    container_name: nuxt-app
+    restart: unless-stopped
+    extra_hosts:
+      - "localhost:host-gateway"
+    environment:
+      - NUXT_HOST=0.0.0.0
+      - NUXT_PORT=3000
+      - NODE_ENV=development  
+      # Везде используем ОДИНАКОВЫЙ URL, чтобы Nuxt не путался
+      - NUXT_PUBLIC_DIRECTUS_URL=http://localhost
+      - DIRECTUS_URL=http://directus:8055
+      # - NUXT_DIRECTUS_TOKEN=qXxnAhrhFd5sMHgp_BWHPjfk8Ca68nX3
+      # - NUXT_PUBLIC_DIRECTUS_TOKEN=qXxnAhrhFd5sMHgp_BWHPjfk8Ca68nX3
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.nuxt
+      - /app/.output
+    networks:
+      - directus_network
+    command: npm run dev
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 15s     # Опрашиваем чаще в dev режиме
+      timeout: 5s
+      retries: 5
+      start_period: 40s # Даем время на запуск Nitro/Vite
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: nginx-proxy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/logs:/var/log/nginx
+    depends_on:
+      - nuxt
+    networks:
+      - directus_network
+
+networks:
+  directus_network:
+    external: true
+    name: directus_network
