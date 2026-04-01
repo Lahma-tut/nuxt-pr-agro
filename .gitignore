@@ -1,0 +1,48 @@
+# Directus Specific
+directus/data/
+directus/uploads/
+directus/extensions/.registry
+
+# Dependencies
+node_modules/
+
+# General Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment Variables
+.env
+.env.*
+!.env.example
+!.env.test
+
+# Build Output (General)
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Testing Output
+coverage/
+
+# Cache / Temporary
+.eslintcache
+.stylelintcache
+
+# Certificates
+certificates/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor Configs
+.idea
+.vscode
+.fleet
